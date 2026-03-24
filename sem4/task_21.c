@@ -1,14 +1,14 @@
 #include <stdio.h>
 int main() {
-    int n, maxlen = 1, curlen = 1;
+    int n;
     scanf("%d", &n);
     int a[1000];
     for(int i = 0; i < n; i++) scanf("%d", &a[i]);
+    int maxs = a[0], cur = a[0];
     for(int i = 1; i < n; i++) {
-        if(a[i] > a[i-1]) curlen++;
-        else curlen = 1;
-        if(curlen > maxlen) maxlen = curlen;
+        cur = (a[i] > cur + a[i]) ? a[i] : cur + a[i];
+        if(cur > maxs) maxs = cur;
     }
-    printf("%d\n", maxlen);
+    printf("%d\n", maxs);
     return 0;
 }

@@ -1,12 +1,15 @@
 #include <stdio.h>
 int main() {
-    int n, min, idx=0;
+    int n, min_val, min_idx = 0;
     scanf("%d", &n);
-    scanf("%d", &min);
-    for(int i=1; i<n; i++) {
+    scanf("%d", &min_val);
+    for(int i = 1; i < n; i++) {
         int x; scanf("%d", &x);
-        if(x < min) { min = x; idx = i; }
+        if(x < min_val) {
+            min_val = x;
+            min_idx = i;
+        }
     }
-    printf("%d %d\n", min, idx);
+    printf("%d %d\n", min_val, min_idx);
     return 0;
 }

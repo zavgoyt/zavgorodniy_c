@@ -1,13 +1,12 @@
 #include <stdio.h>
 int main() {
-    int n;
+    int n, inv = 0;
     scanf("%d", &n);
-    int a[100];
-    for(int i=0; i<n; i++) scanf("%d", &a[i]);
-    int is_pal = 1;
-    for(int i=0; i<n/2; i++) {
-        if(a[i] != a[n-1-i]) { is_pal = 0; break; }
-    }
-    printf("%s\n", is_pal ? "YES" : "NO");
+    int a[1000];
+    for(int i = 0; i < n; i++) scanf("%d", &a[i]);
+    for(int i = 0; i < n; i++)
+        for(int j = i+1; j < n; j++)
+            if(a[i] > a[j]) inv++;
+    printf("%d\n", inv);
     return 0;
 }
