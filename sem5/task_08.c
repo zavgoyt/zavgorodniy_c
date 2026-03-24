@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main() {
+    int a = 50;
+    int *p = &a;
+    int **pp = &p;
+    **pp = 9999;
+    printf("%d\n", a);
+    return 0;
+}
